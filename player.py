@@ -1,6 +1,5 @@
 import os
 import sys
-import random
 import string
 
 def show_me_the_hand(record):
@@ -38,7 +37,7 @@ def leave_sticky_note():
         f.write('before injecting a lambda\n')
 
 if not read_modules():
-    sticky_note = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(32)])
+    sticky_note = 'suckzoo_fantastic_rsp_sticky_note'
     leave_sticky_note()
 
 
