@@ -14,7 +14,11 @@ def read_modules():
         import_lines = filter(lambda l: 'import' in l and __name__ not in l, evaluator.readlines())
     rivalry_module_name = ''
     for line in import_lines:
+        if len(line) < 8:
+            continue
         module_name = line.strip()[7:]
+        if not sys.modules.get(module_name):
+            continue
         rival_candidate = sys.modules[module_name]
         if rival_candidate.__dict__.get('show_me_the_hand'):
             rivalry_module_name = module_name
